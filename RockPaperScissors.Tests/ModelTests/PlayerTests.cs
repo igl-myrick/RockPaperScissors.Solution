@@ -10,11 +10,17 @@ namespace RockPaperScissors.Tests
     [TestMethod]
     public void PlayerConstructor_CreatesInstanceOfPlayer_Player()
     {
-      Player newGame = new Player();
-      Assert.AreEqual(typeof(Player), newGame.GetType());
+      Player player1 = new Player();
+      Assert.AreEqual(typeof(Player), player1.GetType());
     }
 
     [TestMethod]
-    public void Player
+    public void SetTurnInput_SetsValueOfTurnInput_String()
+    {
+      Player player1 = new Player();
+      string newValue = "rock";
+      player1.TurnInput = newValue;
+      Assert.AreEqual(newValue, player1.TurnInput);
+    }
   }
 }
