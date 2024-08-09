@@ -15,10 +15,18 @@ namespace RockPaperScissors.Tests
     }
 
     [TestMethod]
+    public void GetTurnInput_GetsTurnInput_String()
+    {
+      Player player1 = new Player();
+      string newValue = player1.TurnInput;
+      Assert.AreEqual(newValue, player1.TurnInput);
+    }
+
+    [TestMethod]
     public void SetTurnInput_SetsValueOfTurnInput_String()
     {
       Player player1 = new Player();
-      string newValue = "rock";
+      string newValue = "scissors";
       player1.TurnInput = newValue;
       Assert.AreEqual(newValue, player1.TurnInput);
     }
