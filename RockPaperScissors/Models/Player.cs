@@ -8,7 +8,7 @@ namespace RockPaperScissors.Models
 
     public bool CheckInput()
     {
-      if (TurnInput.ToLower() == "rock")
+      if (TurnInput.ToLower() == "rock" || TurnInput.ToLower() == "paper")
       {
         return true;
       }
