@@ -38,10 +38,17 @@ namespace RockPaperScissors.Tests
       Assert.AreEqual(true, player1.CheckInput());
     }
 
-     public void CheckInput_ChecksIfPaper_Boolean()
+    public void CheckInput_ChecksIfPaper_Boolean()
     {
       Player player1 = new Player();
       player1.TurnInput = "paper";
+      Assert.AreEqual(true, player1.CheckInput());
+    }
+
+    public void CheckInput_ChecksIfScissors_Boolean()
+    {
+      Player player1 = new Player();
+      player1.TurnInput = "Scissors";
       Assert.AreEqual(true, player1.CheckInput());
     }
 
