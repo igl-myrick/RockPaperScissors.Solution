@@ -12,6 +12,10 @@ namespace RockPaperScissors.Models
       {
         return true;
       }
+      else
+      {
+        return false;
+      }
     }
   }
 }
