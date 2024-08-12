@@ -30,5 +30,12 @@ namespace RockPaperScissors.Tests
       player1.TurnInput = newValue;
       Assert.AreEqual(newValue, player1.TurnInput);
     }
+
+    public void CheckInput_ChecksIfValidInput_Boolean()
+    {
+      Player player1 = new Player();
+      player1.TurnInput = "rock";
+      Assert.AreEqual(true, player1.CheckInput());
+    }
   }
 }
