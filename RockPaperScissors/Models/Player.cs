@@ -8,7 +8,19 @@ namespace RockPaperScissors.Models
 
     public bool CheckInput()
     {
-      if (TurnInput.ToLower() == "rock" || TurnInput.ToLower() == "paper" || TurnInput.ToLower() == "scissors")
+      if (TurnInput == "rock" || TurnInput == "paper" || TurnInput == "scissors")
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+
+    public bool PlayerHasWon(string opponentResult)
+    {
+      if ((TurnInput == "rock" && opponentResult == "scissors") || (TurnInput == "scissors" && opponentResult == "paper") || (TurnInput == "paper" && opponentResult == "rock"))
       {
         return true;
       }
