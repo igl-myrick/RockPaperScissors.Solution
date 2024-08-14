@@ -31,6 +31,7 @@ namespace RockPaperScissors.Tests
       Assert.AreEqual(newValue, player1.TurnInput);
     }
 
+    [TestMethod]
     public void CheckInput_ChecksIfRock_Boolean()
     {
       Player player1 = new Player();
@@ -38,6 +39,7 @@ namespace RockPaperScissors.Tests
       Assert.AreEqual(true, player1.CheckInput());
     }
 
+    [TestMethod]
     public void CheckInput_ChecksIfPaper_Boolean()
     {
       Player player1 = new Player();
@@ -45,18 +47,29 @@ namespace RockPaperScissors.Tests
       Assert.AreEqual(true, player1.CheckInput());
     }
 
+    [TestMethod]
     public void CheckInput_ChecksIfScissors_Boolean()
     {
       Player player1 = new Player();
-      player1.TurnInput = "Scissors";
+      player1.TurnInput = "scissors";
       Assert.AreEqual(true, player1.CheckInput());
     }
 
+    [TestMethod]
     public void CheckInput_ChecksIfFalse_Boolean()
     {
       Player player1 = new Player();
       player1.TurnInput = "rockk";
       Assert.AreEqual(false, player1.CheckInput());
+    }
+
+    [TestMethod]
+    public void PlayerHasWon_ChecksIfPlayerHasWon_Boolean()
+    {
+      Player player1 = new Player();
+      player1.TurnInput = "rock";
+      bool result = player1.PlayerHasWon("scissors");
+      Assert.AreEqual(true, result);
     }
   }
 }
