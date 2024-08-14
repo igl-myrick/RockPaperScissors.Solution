@@ -17,5 +17,19 @@ namespace RockPaperScissors.Models
         return false;
       }
     }
+
+    public string GetOpponentResult()
+    {
+      Random rand = new Random();
+      switch (rand.Next(3))
+      {
+        case 0:
+          return "rock";
+        case 1:
+          return "paper";
+        case 2:
+          return "scissors";
+      }
+    }
   }
 }
