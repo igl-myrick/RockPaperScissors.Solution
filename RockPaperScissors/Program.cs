@@ -15,7 +15,7 @@ namespace RockPaperScissors
       {
         Console.WriteLine("-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-");
         Console.WriteLine("Enter 'Rock', 'Paper' or 'Scissors':");
-        player.TurnInput = Console.ReadLine();
+        player.TurnInput = Console.ReadLine().ToLower();
         if (player.CheckInput() == false)
         {
           Console.WriteLine("Incorrect input, please re-enter your choice:");
@@ -28,7 +28,7 @@ namespace RockPaperScissors
           {
             HandleTie(player, player.TurnInput, opponentResult);
           }
-          else if ((player.TurnInput == "rock" && opponentResult == "scissors") || (player.TurnInput == "scissors" && opponentResult == "paper") || (player.TurnInput == "paper" && opponentResult == "rock"))
+          else if (player.PlayerHasWon(opponentResult) == true)
           {
             Console.WriteLine("You win!");
             HandleGameEnd(player.TurnInput, opponentResult);
