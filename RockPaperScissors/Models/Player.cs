@@ -29,6 +29,8 @@ namespace RockPaperScissors.Models
           return "paper";
         case 2:
           return "scissors";
+        default:
+          return "rock";
       }
     }
   }
