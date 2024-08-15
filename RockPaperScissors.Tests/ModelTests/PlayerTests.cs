@@ -64,12 +64,21 @@ namespace RockPaperScissors.Tests
     }
 
     [TestMethod]
-    public void PlayerHasWon_ChecksIfPlayerHasWon_Boolean()
+    public void PlayerHasWon_ReturnsTrueIfPlayerHasWon_Boolean()
     {
       Player player1 = new Player();
       player1.TurnInput = "rock";
       bool result = player1.PlayerHasWon("scissors");
       Assert.AreEqual(true, result);
+    }
+
+    [TestMethod]
+    public void PlayerHasWon_ReturnsFalseIfPlayerHasNotWon_Boolean()
+    {
+      Player player1 = new Player();
+      player1.TurnInput = "rock";
+      bool result = player1.PlayerHasWon("paper");
+      Assert.AreEqual(false, result);
     }
   }
 }
